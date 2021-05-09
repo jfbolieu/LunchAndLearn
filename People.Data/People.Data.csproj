@@ -118,7 +118,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Interfaces\IIdentified.cs" />
     <Compile Include="Entities\Agent.cs" />
     <Compile Include="CompanyContext.cs" />
     <Compile Include="Entities\Interfaces\ICannotDelete.cs" />
@@ -126,12 +125,11 @@
     <Compile Include="Entities\Interfaces\IDimension.cs" />
     <Compile Include="Interfaces\ILocation.cs" />
     <Compile Include="Interfaces\IPerson.cs" />
-    <Compile Include="Entities\Interfaces\AwareExtensions.cs" />
     <Compile Include="Enums\Departement.cs" />
     <Compile Include="Enums\Gender.cs" />
     <Compile Include="Interfaces\IAgent.cs" />
     <Compile Include="Interfaces\IClient.cs" />
-    <Compile Include="Entities\Interfaces\IEntity.cs" />
+    <Compile Include="Interfaces\IEntity.cs" />
     <Compile Include="Entities\Interfaces\IReadonlyEntity.cs" />
     <Compile Include="DTO\Person.cs" />
     <Compile Include="Entities\Client.cs" />
@@ -152,10 +150,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>GenderResources.resx</DependentUpon>
     </Compile>
-    <Compile Include="UnitOfWorks\IManager.cs" />
-    <Compile Include="UnitOfWorks\IProvider.cs" />
-    <Compile Include="UnitOfWorks\Manager.cs" />
-    <Compile Include="UnitOfWorks\Provider.cs" />
+    <Compile Include="UnitOfWorks\AwareExtensions.cs" />
+    <Compile Include="UnitOfWorks\BaseUoW.cs" />
+    <Compile Include="UnitOfWorks\IDataManagerUoW.cs" />
+    <Compile Include="UnitOfWorks\IDataProviderUoW.cs" />
+    <Compile Include="UnitOfWorks\DataManagerUoW.cs" />
+    <Compile Include="UnitOfWorks\DataProviderUoW.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

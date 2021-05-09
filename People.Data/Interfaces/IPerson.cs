@@ -1,5 +1,4 @@
-﻿using People.Data.Entities.Interfaces;
-using People.Data.Enums;
+﻿using People.Data.Enums;
 using System;
 
 namespace People.Data.Interfaces
@@ -9,7 +8,7 @@ namespace People.Data.Interfaces
         DateTime BirthDate { get; set; }
         string FirstName { get; set; }
         Gender Gender { get; set; }
-        string Initial { get; set; }
+        string MiddleName { get; set; }
         string LastName { get; set; }
     }
 }

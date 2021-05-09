@@ -1,4 +1,6 @@
-﻿namespace People.Data.Entities.Interfaces
+﻿using People.Data.Interfaces;
+
+namespace People.Data.Entities.Interfaces
 {
     public interface IDimension :IEntity
     {

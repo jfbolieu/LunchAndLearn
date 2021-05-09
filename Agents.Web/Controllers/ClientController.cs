@@ -1,33 +1,31 @@
-﻿using People.BusinessLogic.Models;
-using People.BusinessLogic.Services;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+﻿using People.BusinessLogic.Services;
+using People.Models;
 using System.Web.Mvc;
 
 namespace Agents.Web.Controllers
 {
     public class ClientController : Controller
     {
-        private readonly ClientService _clientService;
+        private readonly ClientManager _manager;
+        private readonly ClientProvider _provider;
 
-        public ClientController(ClientService clientService)
+        public ClientController(ClientManager manager, ClientProvider provider)
         {
-            _clientService = clientService;
+            _manager = manager;
+            _provider = provider;
         }
 
         // GET: Client
         public ActionResult Index()
         {
-            var items = _clientService.GetAll<ClientListItem>();
+            var items = _provider.GetAll<ClientListItem>();
             return View(items);
         }
 
         // GET: Client/Details/5
         public ActionResult Details(int id)
         {
-            var item = _clientService.GetById<ClientModel>(id);
+            var item = _provider.GetById<ClientModel>(id);
             return View(item);
         }
 
@@ -44,7 +42,7 @@ namespace Agents.Web.Controllers
         {
             if (ModelState.IsValid)
             {
-                _clientService.Insert(model);
+                _manager.Insert(model);
                 return RedirectToAction("Index");
             }
             return View(model);
@@ -53,7 +51,7 @@ namespace Agents.Web.Controllers
         // GET: Client/Edit/5
         public ActionResult Edit(int id)
         {
-            var item = _clientService.GetById<ClientModel>(id);
+            var item = _provider.GetById<ClientModel>(id);
             return View(item);
         }
 
@@ -64,7 +62,7 @@ namespace Agents.Web.Controllers
             // TODO: Add update logic here
             if (ModelState.IsValid)
             {
-                _clientService.Update(model);
+                _manager.Update(model);
                 return RedirectToAction("Index");
             }
 
@@ -74,7 +72,7 @@ namespace Agents.Web.Controllers
         // GET: Client/Delete/5
         public ActionResult Delete(int id)
         {
-            _clientService.Delete(id);
+            _manager.Delete(id);
             return RedirectToAction("Index");
         }
 
@@ -83,7 +81,7 @@ namespace Agents.Web.Controllers
         public ActionResult Delete(ClientModel model)
         {
             // TODO: Add delete logic here
-            _clientService.Delete(model);
+            _manager.Delete(model);
             return RedirectToAction("Index");
         }
     }

@@ -3,7 +3,7 @@
 	[Id] INT NOT NULL PRIMARY KEY IDENTITY, 
     [FirstName] VARCHAR(100) NOT NULL, 
     [LastName] VARCHAR(100) NOT NULL, 
-    [Initiale] CHAR(1) NULL, 
+    [MiddleName] VARCHAR(100) NULL, 
     [BirthDate] DATE NOT NULL, 
     [Gender] SMALLINT NOT NULL, 
     [Code] VARCHAR(50) NOT NULL, 

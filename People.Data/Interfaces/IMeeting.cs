@@ -1,5 +1,4 @@
-﻿using People.Data.Entities.Interfaces;
-using System;
+﻿using System;
 
 namespace People.Data.Interfaces
 {

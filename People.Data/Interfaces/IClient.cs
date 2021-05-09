@@ -6,7 +6,6 @@ namespace People.Data.Interfaces
     {
         string Code { get; set; }
         DateTime Since { get; set; }
-        int AgentId { get; set; }
         string Email { get; set; }
     }
 }

@@ -22,10 +22,6 @@ namespace People.Data.Entities
         [EmailAddress]
         public string Email { get; set; }
 
-        public int AgentId { get; set; }
-        [ForeignKey(nameof(AgentId))]
-        public virtual Agent Agent { get; set; }
-
         public bool Deleted { get; set; }
         [Required]
         public string ModifiedBy { get; set; }
@@ -35,6 +31,8 @@ namespace People.Data.Entities
         public string CreatedBy { get; set; }
         [DatabaseGenerated(DatabaseGeneratedOption.Computed)]
         public DateTimeOffset CreatedOn { get; set; }
+
+        public virtual ICollection<Meeting> Meetings { get; set; }
  
     }
 }

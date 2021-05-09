@@ -5,6 +5,7 @@ namespace People.Data.Enums
 {
     public enum Gender
     {
+        [Display(ResourceType =typeof(GenderResources))]
         Unknown,
         [Display(ResourceType =typeof(GenderResources))]
         Man,

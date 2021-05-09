@@ -6,27 +6,18 @@ using System.Linq;
 
 namespace People.BusinessLogic.Services
 {
-    public class ClientProvider : BaseProvider<Client>
+    public class ClientProvider : BaseModelProvider<Client>
     {
 
-        public ClientProvider(IProvider<Client> provider, IConfigurationProvider mapperConfig)
+        public ClientProvider(IDataProviderUoW<Client> provider, IConfigurationProvider mapperConfig)
             : base(provider, mapperConfig)
         {
         }
 
         public ICollection<T> GetAll<T>()
         {
-            return Provider.FindAll().ProjectToArray<T>();
+            return Provider.FindAll().Where(x=>!x.Deleted).ProjectToArray<T>(MapperConfig);
         }
-        protected IQueryable<Client> ForAgents(params int[] agentIds)
-        {
-            return Provider.FindSome(x => agentIds.Contains(x.AgentId));
-        }
-        public ICollection<T> ForAgent<T>(int agentId)
-        {
-            return ForAgents(agentId).ProjectToArray<T>();
-        }
-
         public T GetById<T>(int id)
         {
             return Mapper.Map<T>(Provider.FindOne(id));

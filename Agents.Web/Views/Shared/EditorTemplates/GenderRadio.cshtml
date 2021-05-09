@@ -1,0 +1,15 @@
+﻿@using People.Data.Enums
+@model Gender
+
+
+<ul>
+    @foreach (var item in EnumHelper.GetSelectList(typeof(Gender)))
+    {
+        <li>
+            <label>
+                @Html.RadioButtonFor(Model => Model, item.Value)
+                @item.Text
+            </label>
+        </li>
+    }
+</ul>

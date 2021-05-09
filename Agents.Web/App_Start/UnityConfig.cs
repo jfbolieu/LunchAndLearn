@@ -45,8 +45,9 @@ namespace Agents.Web
             // container.LoadConfiguration();
 
             container.RegisterInstance<DbContext>(new CompanyContext());
-            container.RegisterType<IManager<Client>, Manager<Client>>();
-            container.RegisterType<IManager<Meeting>, Manager<Meeting>>();
+            container.RegisterType<IDataManagerUoW<Client>, DataManagerUoW<Client>>();
+            container.RegisterType<IDataProviderUoW<Client>, DataProviderUoW<Client>>();
+            container.RegisterType<IDataManagerUoW<Meeting>, DataManagerUoW<Meeting>>();
             container.RegisterInstance<IConfigurationProvider>(MapperConfig.CreateMapper(), new Unity.Lifetime.SingletonLifetimeManager());
 
             // TODO: Register your type's mappings here.
@@ -59,7 +60,7 @@ namespace Agents.Web
             {
                 var config = new MapperConfiguration(cfg=>
                 {
-                    cfg.AddMaps("Agents.Web");
+                    cfg.AddMaps("People.Models");
                 });
                 return config;
             }

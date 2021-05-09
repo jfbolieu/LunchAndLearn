@@ -1,6 +1,5 @@
 ﻿using People.Data.Entities;
 using System.Data.Entity;
-using System.Data.Entity.ModelConfiguration.Conventions;
 
 namespace People.Data
 {

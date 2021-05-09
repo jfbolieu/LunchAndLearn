@@ -12,10 +12,10 @@ namespace People.BusinessLogic.Services
         public string Text { get; set; }
         public int Value { get; set; }
     }
-    public class ProvinceService : BaseProvider<Province>
+    public class ProvinceService : BaseModelProvider<Province>
     {
         private readonly ResourceManager _resourcesManager;
-        public ProvinceService(IProvider<Province> provider, IConfigurationProvider mapperConfig)
+        public ProvinceService(IDataProviderUoW<Province> provider, IConfigurationProvider mapperConfig)
             :base(provider, mapperConfig)
         {
             _resourcesManager = new ResourceManager(nameof(Resources.Province), typeof(Resources.Province).Assembly);

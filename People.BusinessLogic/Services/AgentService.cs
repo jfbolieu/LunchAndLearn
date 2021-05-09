@@ -4,26 +4,24 @@ using People.Data.UnitOfWorks;
 using Agent = People.Data.Entities.Agent;
 namespace People.BusinessLogic.Services
 {
-    public class AgentService : AgentProvider
+    public class AgentService : BaseModelManager<Agent>
     {
-        protected readonly IManager<Agent> Manager;
 
-        public AgentService(IManager<Agent> manager, IConfigurationProvider mapperConfig)
+        public AgentService(IDataManagerUoW<Agent> manager, IConfigurationProvider mapperConfig)
             : base(manager, mapperConfig)
         {
-            Manager = manager;
         }
 
-        public TModel Insert<TModel>(TModel model) where TModel : IAgent
+        public TModel Insert<TModel>(TModel model) where TModel : IAgent, IEntity
         {
             return Mapper.Map<TModel>(Manager.Insert(model));
         }
 
-        public TModel Update<TModel>(TModel model) where TModel : IIdentified
+        public TModel Update<TModel>(TModel model) where TModel : IAgent, IEntity
         {
             return Mapper.Map<TModel>(Manager.Update(model));
         }
-        public bool Delete<TModel>(TModel model) where TModel : IIdentified
+        public bool Delete<TModel>(TModel model) where TModel : IAgent, IEntity
         {
             return Delete(model.Id);
         }

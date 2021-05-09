@@ -12,7 +12,6 @@ namespace People.Data.Entities
     public class Agent : Person, IAgent, IDeleteAware
     {
         public virtual ICollection<Meeting> Meetings { get; set; }
-        public virtual ICollection<Client> Clients { get; set; }
 
         public bool Deleted { get; set; }
         [Required]
@@ -25,5 +24,6 @@ namespace People.Data.Entities
         public DateTimeOffset CreatedOn { get; set; }
         [Required]
         public Departement Departement { get; set; }
+
     }
 }

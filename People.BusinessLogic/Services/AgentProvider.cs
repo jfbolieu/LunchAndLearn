@@ -5,20 +5,20 @@ using System.Collections.Generic;
 using Agent = People.Data.Entities.Agent;
 namespace People.BusinessLogic.Services
 {
-    public class AgentProvider : BaseProvider<Agent>
+    public class AgentProvider : BaseModelProvider<Agent>
     {
-        public AgentProvider(IProvider<Agent> provider, IConfigurationProvider mapperConfig) : base(provider, mapperConfig)
+        public AgentProvider(IDataProviderUoW<Agent> provider, IConfigurationProvider mapperConfig) : base(provider, mapperConfig)
         {
         }
 
         public ICollection<T> GetAll<T>()
         {
-            return Provider.FindAll().ProjectToArray<T>();
+            return Provider.FindAll().ProjectToArray<T>(MapperConfig);
         }
 
         public ICollection<T> ForDepartement<T>(Departement departement)
         {
-            return Provider.FindSome(x => x.Departement == departement).ProjectToArray<T>();
+            return Provider.FindSome(x => x.Departement == departement).ProjectToArray<T>(MapperConfig);
         }
 
         public T GetById<T>(int id)

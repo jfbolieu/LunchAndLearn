@@ -7,10 +7,10 @@ using System.Linq;
 
 namespace People.BusinessLogic.Services
 {
-    public class LocationProvider : BaseProvider<Location>
+    public class LocationProvider : BaseModelProvider<Location>
     {
 
-        public LocationProvider(IProvider<Location> provider, IConfigurationProvider mapperConfig)
+        public LocationProvider(IDataProviderUoW<Location> provider, IConfigurationProvider mapperConfig)
             :base(provider, mapperConfig)
         {
         }

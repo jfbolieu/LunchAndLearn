@@ -1,0 +1,8 @@
+﻿@using People.Data.Enums
+@model Gender
+
+@{ 
+    var manager = new System.Resources.ResourceManager(typeof(Gender));
+
+}
+@manager.GetString(Model.ToString())
