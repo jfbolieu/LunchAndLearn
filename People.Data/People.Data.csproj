@@ -140,6 +140,11 @@
     <Compile Include="Entities\Interfaces\IDeleteAware.cs" />
     <Compile Include="Entities\Interfaces\IModifyAware.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Resources\AgentResources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AgentResources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Resources\GenderResources.fr.Designer.cs">
       <DependentUpon>GenderResources.fr.resx</DependentUpon>
       <AutoGen>True</AutoGen>
@@ -162,6 +167,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Resources\AgentResources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>AgentResources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Resources\GenderResources.fr.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>GenderResources.fr.Designer.cs</LastGenOutput>

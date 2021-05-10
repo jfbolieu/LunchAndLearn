@@ -70,6 +70,7 @@
     <Compile Include="Clients\ClientListItem.cs" />
     <Compile Include="Clients\ClientModel.cs" />
     <Compile Include="Clients\MeetingListItem.cs" />
+    <Compile Include="Helpers\EnumHelper.cs" />
     <Compile Include="MeetingModel.cs" />
     <Compile Include="Profiles\ClientProfile.cs" />
     <Compile Include="Profiles\FullnamValueConverter.cs" />
@@ -114,6 +115,9 @@
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>ClientResources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Agents\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

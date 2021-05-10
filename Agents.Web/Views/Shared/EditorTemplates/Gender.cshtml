@@ -1,4 +1,7 @@
 ﻿@using People.Data.Enums
-@model Gender
+@model string
+    @{ 
+        var value = (Gender)Enum.Parse(typeof(Gender), Model);
+    }
 
-@Html.EnumDropDownListFor(Model => Model, ViewData["htmlAttributes"])
+@Html.EnumDropDownListFor(Model => value, ViewData["htmlAttributes"])

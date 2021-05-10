@@ -64,6 +64,7 @@
     <Build Include="Tables\Meeting.sql" />
     <Build Include="Tables\Location.sql" />
     <Build Include="Tables\Province.sql" />
+    <Build Include="Tables\Payment.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="MyCompany.publish.xml" />

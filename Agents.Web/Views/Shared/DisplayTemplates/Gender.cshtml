@@ -1,8 +1,7 @@
 ﻿@using People.Data.Enums
-@model Gender
+@model string
 
 @{ 
-    var manager = new System.Resources.ResourceManager(typeof(Gender));
-
+    var selected = EnumHelper.GetSelectList(typeof(Gender)).FirstOrDefault(x => x.Value == Model);
 }
-@manager.GetString(Model.ToString())
+@(selected?.Text)

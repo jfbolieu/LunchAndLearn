@@ -36,8 +36,9 @@ namespace People.Models
 
         [Required]
         [Display(ResourceType = typeof(ClientResources))]
-        public Gender Gender { get; set; }
-
+        [UIHint("Gender")]
+        public string Gender { get; set; }
+        
         [Required]
         [Display(ResourceType = typeof(ClientResources))]
         [MaxLength(1028), MinLength(1)]
@@ -56,5 +57,6 @@ namespace People.Models
         [HiddenInput(DisplayValue = true)]
         public DateTime Since { get; set; }
 
+        Gender IPerson.Gender { get => (Gender)Enum.Parse(typeof(Gender), Gender); set => Gender = value.ToString(); }
     }
 }

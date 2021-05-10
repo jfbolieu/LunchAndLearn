@@ -9,7 +9,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace People.Data.Entities
 {
-    public class Agent : Person, IAgent, IDeleteAware
+    public partial class Agent : Person, IAgent, IDeleteAware
     {
         public virtual ICollection<Meeting> Meetings { get; set; }
 

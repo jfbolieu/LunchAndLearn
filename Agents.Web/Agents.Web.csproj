@@ -233,8 +233,8 @@
     <Content Include="Views\Client\Index.cshtml" />
     <Content Include="Views\Shared\DisplayTemplates\Gender.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\Gender.cshtml" />
-    <Content Include="Views\Client\Create.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\GenderRadio.cshtml" />
+    <Content Include="Views\Client\Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
